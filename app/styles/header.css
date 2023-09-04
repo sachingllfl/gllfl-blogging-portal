@@ -1,0 +1,64 @@
+.submenu {
+  @apply lg:shadow-lg lg:rounded;
+}
+.megamenu {
+  @apply grid group-hover:grid lg:hidden grid-cols-1 lg:grid-cols-4 bg-transparent lg:bg-white lg:fixed left-0 right-0 lg:max-w-6xl lg:w-full mx-auto p-6 gap-4;
+  animation: intro 0.3s ease-in-out;
+}
+.simplemenu {
+  @apply grid group-hover:grid lg:hidden bg-transparent lg:bg-white lg:absolute lg:min-w-max lg:w-72 p-6 right-0 grid-cols-1 gap-4;
+  animation: intro 0.3s ease-in-out;
+}
+.megamenu a,
+.simplemenu a {
+  @apply relative hover:pl-3 hover:before:block before:w-[2px] before:h-full before:absolute before:left-0 before:top-0 before:bg-gray-200 before:hidden transition-all duration-300 text-white/80 lg:text-slate-600 hover:text-custom_blue;
+}
+.burger {
+  @apply w-6 h-6 relative cursor-pointer block lg:hidden;
+}
+.burger span {
+  @apply w-full h-[1px] bg-white absolute left-0 top-[50%] transition-all duration-200;
+}
+.burger span:first-child {
+  @apply top-[20%];
+}
+.burger span:last-child {
+  @apply top-[80%];
+}
+.burger.active span:nth-child(2) {
+  @apply scale-0;
+}
+.burger.active span:first-child {
+  transform: rotate(-45deg);
+  transform-origin: center;
+  top: 50%;
+}
+.burger.active span:last-child {
+  transform: rotate(45deg);
+  transform-origin: center;
+  top: 50%;
+}
+.sticky_header {
+  animation: fadeInDown 0.3s ease;
+}
+
+@keyframes intro {
+  from {
+    opacity: 0;
+    transform: translateY(0.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-85px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

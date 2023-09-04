@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-rubik text-slate-800;
+  }
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-montserrat;
+  }
+  p {
+    @apply text-slate-600;
+  }
+}
+
+@layer utilities {
+  .breadcrumbs a {
+    @apply text-slate-500;
+  }
+  .homeBanner {
+    background-image: url("./assets/home/bg_home_banner.jpg");
+    background-size: cover;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+  }
+  @media only screen and (max-width: 768px) {
+    .homeBanner {
+      background-position: right 50% bottom;
+    }
+  }
+  .iopAppView {
+    @apply relative;
+  }
+  .iopAppView:before {
+    content: "";
+    background: url("./assets/direction_arrow.png");
+    width: 196px;
+    height: 137px;
+    position: absolute;
+    left: -260px;
+    top: 100px;
+  }
+  .fPanel {
+    @apply mb-5;
+  }
+  .fTitle {
+    @apply text-xl text-white mb-2;
+  }
+  .fLinks {
+    @apply flex flex-col gap-1;
+  }
+  .fLinks a {
+    @apply text-white/90 font-light text-sm self-start hover:underline;
+  }
+  .hasMenu {
+    @apply relative pr-5;
+  }
+  .hasMenu svg {
+    @apply absolute right-0 top-1/2 -translate-y-1/2;
+  }
+  .homeSwiper .swiper-button-prev:after,
+  .homeSwiper .swiper-button-next:after {
+    @apply text-custom_orange;
+  }
+  .homeSwiper .swiper-pagination-bullet-active {
+    @apply bg-custom_orange;
+  }
+  .homeSwiper .swiper-pagination {
+    @apply static;
+  }
+  .marqueeOuter {
+    @apply w-[340px] h-[204px] md:w-[600px] md:h-[360px] bg-white absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 z-[1] rounded-2xl overflow-hidden drop-shadow-xl;
+  }
+  @media only screen and (max-width: 1024px) {
+    .iopAppView {
+      @apply mx-auto mt-4;
+    }
+    .iopAppView:before {
+      display: none;
+    }
+    .fPanel {
+      @apply mb-4;
+    }
+    .fTitle {
+      @apply text-lg  mb-1.5;
+    }
+  }
+  @media only screen and (max-width: 640px) {
+    .fLinks a {
+      @apply text-xs;
+    }
+  }
+}
+.marqueeCmp {
+  animation: bgMove 5s linear infinite;
+}
+@keyframes bgMove {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 -360px;
+  }
+}

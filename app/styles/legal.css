@@ -1,0 +1,25 @@
+.legal-content h6 {
+  @apply md:text-lg font-bold text-base my-2;
+}
+.legal-content ul {
+  @apply list-inside list-disc text-sm;
+}
+.legal-content p {
+  @apply text-sm;
+}
+.legal-content p,
+.legal-content ul li {
+  @apply mb-3 text-slate-700;
+}
+.legal-content strong,
+.legal-content ul li strong {
+  @apply font-semibold;
+}
+.legal-table {
+  @apply min-w-full;
+}
+
+.legal-table th,
+.legal-table td {
+  @apply p-2 border text-sm;
+}

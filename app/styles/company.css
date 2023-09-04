@@ -1,0 +1,4 @@
+.logoSwiper .swiper-button-prev:after,
+.logoSwiper .swiper-button-next:after {
+  @apply text-custom_orange;
+}
